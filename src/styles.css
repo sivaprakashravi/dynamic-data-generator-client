@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+.f-ptsans {
+    font-family: 'PT Sans', sans-serif;
+}
+* {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+ul,
+li,
+p, 
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+select, input {
+    padding: 3px;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+button {
+    border-radius: 5px;
+}
+.error {
+    border: 2px solid #ff0000;
+}
+
+
+button, .button {
+    margin-right: 5px;
+    border: none;
+    background: #ccc;
+    color: #000;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.main {
+    background: #1B9CFC;
+    color: #fff;
+}
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.logo {
+    line-height: 75px;
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    display: inline-block;
+    width: 75px;
+    text-align: center;
+    font-family: serif;
+    font-size: 40px;
+    position: relative;
+    height: 75px;
+    float: left;
+    margin-right: 10px;
+}
+.logo label:first-child {
+    top: 27px;
+}
+
+.logo label {
+    position: absolute;
+    left: 27px;
+    line-height: 30px;
+    top: 20px;
+}
+.ngx-json-viewer {
+    height: calc(100% - 15px) !important;
+    overflow-y: scroll !important;
+    display: block;
+}
+section .ngx-json-viewer {
+    overflow-y: hidden !important;
+}

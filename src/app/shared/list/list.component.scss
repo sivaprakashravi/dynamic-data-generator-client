@@ -1,0 +1,102 @@
+ul {
+    display: block;
+    padding: 5px 15px 0;
+    min-width: 320px;
+    position: relative;
+    li {
+        display: block;
+        margin-bottom: 5px;
+        input,
+        select {
+            width: 115px;
+            margin-right: 5px;
+        }
+        ul:before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: -1px;
+            height: 22px;
+            width: 1px;
+            border-left: 1px solid #aaa;
+        }
+        h4:before {
+            position: absolute;
+            width: 6px;
+            height: 1px;
+            border-top: 1px solid #aaa;
+            content: '';
+            left: 7px;
+            top: 20px;
+        }
+    }
+}
+.array-length {
+    width: 45px !important;
+    margin-left: 5px;
+    border: none;
+    border-bottom: 0.5px solid #ddd;
+    font-size: 11px;
+    text-align: center;
+}
+.type-selector {
+    display: inline;
+    span {
+        font-size: 10px;
+        display: inline-block;        
+        margin-bottom: 8px;
+        background: #ddd;
+        padding: 0 5px;
+        text-align: center;
+        cursor: pointer;
+        line-height: 19px;
+        &:first-child {
+            border-radius: 8px 0 0 8px;
+            border-right: 0.5px solid #fff;
+        }
+        &:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+        &.active {
+            background: #F97F51;
+            color: #fff;
+        }
+    }
+}
+.single {
+    span {
+        background: #F97F51;
+        color: #fff;
+        width: 35px;
+        border-radius: 8px !important;
+    }
+}
+.add-list {
+    background: #1B9CFC;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 10px;
+    display: inline-block;        
+    margin-bottom: 8px;
+    width: 24px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 19px;
+    margin-left: 3px;
+}
+.list-item {
+    span.remove-list {
+        font-family: sans-serif;
+        background: #F97F51;
+        color: #fff;
+        border-radius: 8px;    
+        font-size: 10px;
+        // display: inline-block;
+        display: none;
+        width: 24px;
+        text-align: center;
+        cursor: pointer;
+        line-height: 19px;
+        margin-left: 5px;
+    }
+}

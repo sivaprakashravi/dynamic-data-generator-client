@@ -1,0 +1,26 @@
+<ul>
+  <h4 class="f-ptsans">
+    <div *ngIf="!type" class="type-selector">
+      Data format 
+      <span (click)="toggleType(type)" [ngClass]="{'active':type.active}" *ngFor="let type of listType">{{type.name}}</span>
+    </div> 
+    <div *ngIf="type" class="type-selector single">
+      <span>{{type}}</span>
+    </div>
+    <span (click)="addList(list)" class="add-list">+</span>
+    <input type="text" (change)="numberOnly()" maxlength="5" [(ngModel)]="length" *ngIf="type ==='array' || dataType === 'Array'" class="array-length" placeholder="[] Length">
+  </h4>
+  <li class="list-item" *ngFor="let item of list">
+    <input type="text" placeholder="Object name" [ngClass]="{'error': item.invalid}" (input)="fireModelChange(length)" [(ngModel)]="item.objectName">
+    <select (ngModelChange)="updateModel($event, item)" [(ngModel)]="item.type">
+      <option [value]="type.createModel" *ngFor="let type of types">{{type.type}}</option>
+    </select>
+    <select (ngModelChange)="updateModel($event, item)" [(ngModel)]="item.value" *ngIf="item.type === 'boolean'">
+      <option [value]="bType.value" *ngFor="let bType of booleanList">{{bType.name}}</option>
+    </select>
+    <input type="text" (input)="fireModelChange(length)" [(ngModel)]="item.value" placeholder="Enter a name" *ngIf="item.type === 'name'">
+    <input type="number" (input)="fireModelChange(length)" [(ngModel)]="item.value" placeholder="Enter a number" *ngIf="item.type === 'number'">
+    <span class="remove-list">X</span>
+    <app-list [list]="item.list" (updatedList)="fireModelChange(length)" [length]="0" [type]="item.type" *ngIf="item.type === 'array' || item.type === 'object'"></app-list>
+  </li>
+</ul>

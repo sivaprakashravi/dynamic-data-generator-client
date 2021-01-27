@@ -1,0 +1,30 @@
+<div class="split">
+  <div class="generate-form">
+    <header class="form">
+      <a class="logo"><label>S</label><label>T</label></a>
+      <h2 class="f-ptsans">Test Data Generator</h2>
+      <h5 class="f-ptsans">Generate your own test data and expose it as an api on the go to test your projects. Choose between JSON or XML as per your requirement</h5>
+    </header>        
+    <h3 class="f-ptsans main-head">
+      <button (click)="resetList()">Reset</button>
+      <button class="main" (click)="generateList()">Generate</button>
+    </h3>
+    <div class="app-list">
+      <app-list [list]="list" [length]="parentLength" [dataType]="'Array'" (updatedList)="listChanged($event)">
+      </app-list>
+    </div>
+  </div>
+</div>
+<div class="split">
+  <header class="tree">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  </header>
+  <div class="data-view" *ngIf="id && json"> 
+    <button class="main" (click)="getJson()">View Data</button>
+    <button (click)="copyMessage(id)" value="click to copy" >Copy API</button>
+    <a class="button main" href="http://localhost:8083/loader?id={{id}}" target="_blank">View API</a>
+    <label class="f-ptsans api-key">API Key: {{id}}</label>
+    <ngx-json-viewer [json]="json" [expanded]="false"></ngx-json-viewer>
+  </div>
+</div>
+
